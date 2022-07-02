@@ -24,8 +24,11 @@ export class AddDialogComponent implements OnInit {
 
   submitData()
   {
-    console.log(this.studentform.value);
+    console.log('hii');
     
   }
+
+
+  
 
 }
