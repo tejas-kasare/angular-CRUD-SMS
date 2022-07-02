@@ -1,16 +1,14 @@
-<!-- <div class="modal-dialog">
 
-    <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Add New Student :</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title">Add New Student : {{name}}</h5>
+        <button type="button" class="btn-close"  aria-label="Close" (click)="activeModal.close('Close click')"></button>
       </div>
       <div class="modal-body">
-       <form [formGroup]="studentform">
+       <form [formGroup]="studentform" (ngSubmit)="submitData()">
           <div class="mb-3 row">
             <label for="inputPassword" class="col-sm-3 col-form-label">Name :</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="inputPassword" formControlName="name">
+              <input type="text" class="form-control" id="inputPassword" formControlName="name" name="name">
             </div>
           </div>
 
@@ -18,11 +16,11 @@
             <label for="inputPassword" class="col-sm-3 col-form-label">Gender :</label>
             <div class="col-sm-9">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="gender">
+                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" formControlName="gender" >
                     <label class="form-check-label" for="flexRadioDefault1">Male</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" formControlName="gender">
+                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" formControlName="gender">
                     <label class="form-check-label" for="flexRadioDefault2">Female</label>
                 </div>
             </div>
@@ -45,17 +43,14 @@
                 <input type="date" class="form-control" id="inputPassword" formControlName="dob">
             </div>
           </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="activeModal.close('Close click')" ngbAutofocus  >Submit</button>
+            <button type="button" class="btn btn-danger" (click)="activeModal.close('Close click')">Close</button>
+    
+          </div>
           
        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="submitData()">Submit</button>
-      </div>
-    </div>
-  </div> -->
-
-
-  
-
-
+      
+    
