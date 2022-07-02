@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-dialog',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDialogComponent implements OnInit {
 
-  constructor() { }
+  studentform!:FormGroup
+  constructor(
+    private formBuilder:FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.studentform=this.formBuilder.group({
+      name:['',Validators.required],
+      gender:['',Validators.required],
+      class:['',Validators.required],
+      dob:['',Validators.required]
+    })
+  }
+
+  submitData()
+  {
+    console.log(this.studentform.value);
+    
   }
 
 }
